@@ -1,4 +1,4 @@
-﻿using TodoApp.Models;
+using TodoApp.Models;
 
 namespace TodoApp.Services
 {
@@ -17,12 +17,18 @@ namespace TodoApp.Services
                 IsComplete = false,
                 CreatedAt = DateTime.Now
             };
+
             todos.Add(todo);
         }
 
         public List<Todo> GetAllTodos()
         {
             return todos;
+        }
+
+        public void DeleteTodo(int id)
+        {
+            todos.RemoveAll(t => t.Id == id);
         }
     }
 }
