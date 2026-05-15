@@ -60,7 +60,16 @@ while (true)
             break;
             
         case "3":
-            // Will be implemented by Kassuar
+            Console.Write("Enter todo ID to mark complete: ");
+            if (int.TryParse(Console.ReadLine(), out int completeId))
+            {
+                todoService.MarkTodoComplete(completeId);
+                Console.WriteLine("Todo marked as complete!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid ID!");
+            }
             break;
             
         case "4":
